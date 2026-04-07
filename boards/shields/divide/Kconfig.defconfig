@@ -1,0 +1,16 @@
+if SHIELD_DIVIDE_LEFT
+
+config ZMK_KEYBOARD_NAME
+    default "Divide"
+
+config ZMK_SPLIT_ROLE_CENTRAL
+    default y
+
+endif # SHIELD_DIVIDE_LEFT
+
+if SHIELD_DIVIDE_LEFT || SHIELD_DIVIDE_RIGHT
+
+config ZMK_SPLIT
+    default y
+
+endif # SHIELD_DIVIDE_LEFT || SHIELD_DIVIDE_RIGHT
