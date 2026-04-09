@@ -44,6 +44,8 @@
     };
 };
 
+
 &default_layout {
     transform = <&default_transform>;
-    kscan = <&mock_kscan
+    kscan = <&mock_kscan>;
+};
