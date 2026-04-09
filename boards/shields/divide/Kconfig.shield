@@ -1,7 +1,17 @@
+config SHIELD_DIVIDE
+    bool
+
 config SHIELD_DIVIDE_LEFT
-    def_bool $(shields_list_contains,divide_left)
+    bool
+    default $(shields_list_contains,divide_left)
+    select SHIELD_DIVIDE
 
 config SHIELD_DIVIDE_RIGHT
-    def_bool $(shields_list_contains,divide_right)
+    bool
+    default $(shields_list_contains,divide_right)
+    select SHIELD_DIVIDE
 
 config SHIELD_DIVIDE_DONGLE
+    bool
+    default $(shields_list_contains,divide_dongle)
+    select SHIELD_DIVIDE
