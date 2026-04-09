@@ -16,3 +16,19 @@ config BT_MAX_CONN
     default 7
 
 config BT_MAX_PAIRED
+    default 7
+
+endif
+
+if SHIELD_DIVIDE_LEFT || SHIELD_DIVIDE_RIGHT
+
+config ZMK_KEYBOARD_NAME
+    default "Divide"
+
+config ZMK_SPLIT
+    default y
+
+config ZMK_SPLIT_ROLE_CENTRAL
+    default n
+
+endif
