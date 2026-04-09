@@ -3,3 +3,5 @@ config SHIELD_DIVIDE_LEFT
 
 config SHIELD_DIVIDE_RIGHT
     def_bool $(shields_list_contains,divide_right)
+
+config SHIELD_DIVIDE_DONGLE

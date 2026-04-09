@@ -1,25 +1,18 @@
-#include <dt-bindings/zmk/matrix_transform.h>
 #include "divide-layouts.dtsi"
+#include <dt-bindings/zmk/matrix_transform.h>
 
 / {
     chosen {
-        zmk,kscan = &kscan;
+        zmk,kscan = &mock_kscan;
         zmk,matrix-transform = &default_transform;
         zmk,physical-layout = &default_layout;
     };
 
-    kscan: kscan {
-        compatible = "zmk,kscan-gpio-matrix";
-        diode-direction = "col2row";
-        wakeup-source;
-
-        row-gpios
-            = <&xiao_d 0 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>
-            , <&xiao_d 1 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>
-            , <&xiao_d 2 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>
-            , <&xiao_d 3 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>
-            , <&xiao_d 4 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>
-            ;
+    mock_kscan: mock_kscan_0 {
+        compatible = "zmk,kscan-mock";
+        columns = <0>;
+        rows = <0>;
+        events = <0>;
     };
 
     default_transform: default_transform {
@@ -46,4 +39,11 @@
 
             /* Row 4: left 4 + right 1 */
             RC(4,0)  RC(4,1)  RC(4,2)  RC(4,3)
-            RC(4,11
+            RC(4,11)
+        >;
+    };
+};
+
+&default_layout {
+    transform = <&default_transform>;
+    kscan = <&mock_kscan

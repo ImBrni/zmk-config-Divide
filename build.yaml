@@ -18,3 +18,30 @@
 #     artifact-name: corne_left_with_studio
 #
 ---
+# include:
+#         - board: xiao_ble//zmk
+#           shield: divide_dongle
+
+#         - board: xiao_ble//zmk
+#           shield: divide_left
+#           cmake-args: -DCONFIG_ZMK_SPLIT=y -DCONFIG_ZMK_SPLIT_ROLE_CENTRAL=n
+
+#         - board: xiao_ble//zmk
+#           shield: divide_right
+#           cmake-args: -DCONFIG_ZMK_SPLIT=y -DCONFIG_ZMK_SPLIT_ROLE_CENTRAL=n
+
+#         - board: xiao_ble//zmk
+#           shield: settings_reset
+
+include:
+        - board: seeeduino_xiao_ble
+          shield: divide_dongle
+
+        - board: seeeduino_xiao_ble
+          shield: divide_left
+
+        - board: seeeduino_xiao_ble
+          shield: divide_right
+
+        - board: seeeduino_xiao_ble
+          shield: settings_reset

@@ -1,16 +1,18 @@
-if SHIELD_DIVIDE_LEFT
+if SHIELD_DIVIDE_DONGLE
 
 config ZMK_KEYBOARD_NAME
     default "Divide"
 
-config ZMK_SPLIT_ROLE_CENTRAL
-    default y
-
-endif # SHIELD_DIVIDE_LEFT
-
-if SHIELD_DIVIDE_LEFT || SHIELD_DIVIDE_RIGHT
-
 config ZMK_SPLIT
     default y
 
-endif # SHIELD_DIVIDE_LEFT || SHIELD_DIVIDE_RIGHT
+config ZMK_SPLIT_ROLE_CENTRAL
+    default y
+
+config ZMK_SPLIT_BLE_CENTRAL_PERIPHERALS
+    default 2
+
+config BT_MAX_CONN
+    default 7
+
+config BT_MAX_PAIRED
